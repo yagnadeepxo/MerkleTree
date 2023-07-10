@@ -1,6 +1,11 @@
+
 use sha2::{Digest, Sha256};
 use hex;
-pub fn hash(input: &str) -> String {
+
+pub fn hash<T>(input: T) -> String
+where
+    T: AsRef<[u8]>,
+{
     let mut hasher = Sha256::new();
 
     hasher.update(input);
@@ -9,7 +14,5 @@ pub fn hash(input: &str) -> String {
 
     let hash_string = hex::encode(result);
 
-    return hash_string;
+    hash_string
 }
-
-
