@@ -1,5 +1,5 @@
 
-use sha2::{Digest, Sha256};
+use sha2::{Sha256};
 use hex;
 
 pub fn hash<T>(input: T) -> String
